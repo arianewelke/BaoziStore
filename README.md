@@ -61,7 +61,7 @@ Cada entidade (`/cliente`, `/produto`, `/pedido`) implementa o mesmo padrão de 
 
 ## Diagrama de caso de uso
 
-![Diagrama de caso de uso da API Baozi Store](docs/diagrama-caso-de-uso.png)
+![Diagrama de caso de uso da API Baozi Store](baozi-store/docs/diagrama-caso-de-uso.png)
 
 ## Como executar o projeto
 
