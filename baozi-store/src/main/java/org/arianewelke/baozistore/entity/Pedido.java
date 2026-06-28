@@ -1,0 +1,82 @@
+package org.arianewelke.baozistore.entity;
+
+import jakarta.persistence.*;
+
+import java.time.LocalDate;
+import java.util.Objects;
+
+@Entity
+@Table(name = "pedido")
+public class Pedido {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private Long clienteId;
+    private Long produtoId;
+    private Integer quantidade;
+
+    public Pedido() {
+    }
+
+    public Pedido(Long id, Long clienteId, Long produtoId, Integer quantidade) {
+        this.id = id;
+        this.clienteId = clienteId;
+        this.produtoId = produtoId;
+        this.quantidade = quantidade;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getClienteId() {
+        return clienteId;
+    }
+
+    public void setClienteId(Long clienteId) {
+        this.clienteId = clienteId;
+    }
+
+    public Long getProdutoId() {
+        return produtoId;
+    }
+
+    public void setProdutoId(Long produtoId) {
+        this.produtoId = produtoId;
+    }
+
+    public Integer getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(Integer quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    @Override
+    public String toString() {
+        return "Pedido{" +
+                "id=" + id +
+                ", clienteId=" + clienteId +
+                ", produtoId=" + produtoId +
+                ", quantidade=" + quantidade +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (object == null || getClass() != object.getClass()) return false;
+        Pedido pedido = (Pedido) object;
+        return Objects.equals(id, pedido.id) && Objects.equals(clienteId, pedido.clienteId) && Objects.equals(produtoId, pedido.produtoId) && Objects.equals(quantidade, pedido.quantidade);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, clienteId, produtoId, quantidade);
+    }
+}
